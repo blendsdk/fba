@@ -1,0 +1,16 @@
+{
+    "name": "gevik/fba",
+    "require": {
+        "php": ">=5.5.9",
+        "blendsdk/blendengine": "dev-engine2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fba\\": "src",
+            "Acme\\": "src/Acme"
+        },
+        "files": [
+            "src/Globals.php"
+        ]
+    }
+}

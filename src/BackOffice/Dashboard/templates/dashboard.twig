@@ -1,0 +1,5 @@
+{% extends "bootstrap.twig" %}
+{% block main %}
+    <p>This is your secure dashboard {{ runtime.getCurrentUser().getUsername() }}!</p>
+    <p>You can signout <a href="{{ url('signout') }}">here</a>    
+{% endblock %}    
