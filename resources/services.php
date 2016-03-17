@@ -21,7 +21,7 @@ return [
     "Fba\\FbaRuntime" => "Fba\\FbaRuntime",
     "site-module" => SiteModule::class,
     "bo-module" => BackOfficeModule::class,
-    "fba-sec" => FbaSecurityProvider::class,
+    "bo-sec" => FbaSecurityProvider::class,
     /**
      * Uncomment if you need multi-language option in your application.
      * The LocaleService will automatically handle the {_locale}

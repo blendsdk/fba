@@ -9,14 +9,6 @@ use Blend\Framework\Security\Provider\Common\LoginSecurityProvider;
  */
 class FbaSecurityProvider extends LoginSecurityProvider {
 
-    protected function getAfterLogoutURL() {
-        return $this->urlGenerator->generate('home');
-    }
-
-    protected function getEntryPointURL() {
-        return $this->urlGenerator->generate('dashboard');
-    }
-
     protected function getLoginURL() {
         return $this->urlGenerator->generate('signin');
     }
@@ -25,8 +17,8 @@ class FbaSecurityProvider extends LoginSecurityProvider {
         return $this->urlGenerator->generate('signout');
     }
 
-    public function validateRoles(array $roles = array()) {
-        return true;
+    protected function getSecureEntryPointURL() {
+        return $this->urlGenerator->generate('dashboard');
     }
 
 }

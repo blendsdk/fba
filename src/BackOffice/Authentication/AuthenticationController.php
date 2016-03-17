@@ -2,10 +2,7 @@
 
 namespace Fba\BackOffice\Authentication;
 
-use Symfony\Component\HttpFoundation\Request;
 use Fba\Support\Controller;
-use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Fba\BackOffice\Authentication\Form\LoginForm;
 
 /**
@@ -23,9 +20,8 @@ class AuthenticationController extends Controller {
         return $loginForm->process();
     }
 
-    public function signout(Request $request, UrlGeneratorInterface $urlGenerator) {
-        $request->getSession()->clear();
-        return new RedirectResponse($request->getUri());
+    public function signout() {
+        return $this->runtime->signOut();
     }
 
 }

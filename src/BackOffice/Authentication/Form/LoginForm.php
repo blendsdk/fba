@@ -67,7 +67,7 @@ class LoginForm extends PostRedirectGetForm {
 
     public function processFrom($submitted, $is_valid) {
         if ($is_valid && $submitted) {
-            if ($this->getUsername() === 'gevik' && $this->getPssword() == 'gevik123') {
+            if ($this->getUsername() === 'user1' && $this->getPssword() == 'user1') {
                 $this->runtime->setCurrentUser(new FbaUser([
                     'id' => uniqid(),
                     'username' => $this->getUsername()

@@ -12,7 +12,6 @@ use Blend\Component\Routing\RouteBuilder;
 use Blend\Component\Routing\RouteProviderInterface;
 use Fba\BackOffice\Dashboard\DashboardController;
 use Fba\BackOffice\Authentication\AuthenticationController;
-use Blend\Component\Routing\Route;
 
 /**
  * Description of BackOfficeModule
@@ -22,16 +21,16 @@ use Blend\Component\Routing\Route;
 class BackOfficeModule implements RouteProviderInterface {
 
     public function loadRoutes(RouteBuilder $builder) {
-        $builder->route('dashboard', '/bo/dasbaord'
+        $builder->route('dashboard', '/bo/dashboard'
                         , [DashboardController::class, 'index'])
-                ->setAccessMethod(Route::ACCESS_AUTHORIZED_USER);
+                ->accessAuthorized();
 
         $builder->route('signin', '/bo/signin', [AuthenticationController::class, 'signin'])
-                ->setAccessMethod(Route::ACCESS_GUEST_ONLY);
+                ->accessGuestOnly();
 
         $builder->route('signout', '/bo/signout'
                         , [AuthenticationController::class, 'signout'])
-                ->setAccessMethod(Route::ACCESS_AUTHORIZED_USER);
+                ->accessAuthorized();
     }
 
 }
