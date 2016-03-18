@@ -2,6 +2,8 @@
     "Fba\\FbaRuntime": "Fba\\FbaRuntime",
     "site-module": "Fba\\Site\\SiteModule",
     "bo-module": "Fba\\BackOffice\\BackOfficeModule",
-    "bo-sec": "Fba\\Security\\FbaSecurityProvider",
+    "bo-sec": "Fba\\Security\\FbaLoginSecurityProvider",
+    "api-module": "Fba\\API\\APIModule",
+    "api-sec": "Fba\\Security\\FbaAPISecurityProvider",
     "Blend\\Component\\Templating\\EngineInterface": "Blend\\Framework\\Templating\\Twig\\TwigEngineService"
 }

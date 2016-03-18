@@ -7,7 +7,7 @@ use Blend\Framework\Security\Provider\Common\LoginSecurityProvider;
 /**
  * @author Gevik Babakhani <gevikb@gmail.com>
  */
-class FbaSecurityProvider extends LoginSecurityProvider {
+class FbaLoginSecurityProvider extends LoginSecurityProvider {
 
     protected function getLoginURL() {
         return $this->urlGenerator->generate('signin');

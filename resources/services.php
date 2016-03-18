@@ -10,7 +10,10 @@ use Symfony\Component\Translation\TranslatorInterface;
 use Blend\Framework\Factory\TranslatorFactory;
 use Fba\Site\SiteModule;
 use Fba\BackOffice\BackOfficeModule;
-use Fba\Security\FbaSecurityProvider;
+use Fba\Security\FbaLoginSecurityProvider;
+use Fba\Security\FbaAPISecurityProvider;
+use Fba\API\APIModule;
+use Blend\Framework\Security\Provider\Common\APISecurityProvider;
 
 return [
     /**
@@ -21,7 +24,9 @@ return [
     "Fba\\FbaRuntime" => "Fba\\FbaRuntime",
     "site-module" => SiteModule::class,
     "bo-module" => BackOfficeModule::class,
-    "bo-sec" => FbaSecurityProvider::class,
+    "bo-sec" => FbaLoginSecurityProvider::class,
+    "api-module" => APIModule::class,
+    "api-sec" => FbaAPISecurityProvider::class,
     /**
      * Uncomment if you need multi-language option in your application.
      * The LocaleService will automatically handle the {_locale}
